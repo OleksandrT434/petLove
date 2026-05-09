@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    align-items: center;
+    height: 390px;
+    background-color: #f6b83d;
+    border-radius: 30px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px;
+    
+    
+}
+
+.title{
+   font-family: var(--font-family);
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 100%;
+   letter-spacing: 0em;
+   color: #fff;
+   display: flex;
+   align-items: center;
+}
+
+.heart{
+    color: #ffffff;
+}
+
+.userIcon{
+    color: #fff;
+    font-size: 40px;
+    margin-left: 40px;
+}
+
+.menuButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.menuIcon{
+    color: #fff;
+    font-size: 40px;
+}

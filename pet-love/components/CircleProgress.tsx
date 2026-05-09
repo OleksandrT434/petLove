@@ -1,4 +1,3 @@
-// components/CircleProgress.tsx
 type Props = {
     progress: number
 }
