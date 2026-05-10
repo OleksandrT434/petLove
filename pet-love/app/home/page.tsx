@@ -6,6 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "next/image";
 import BurgerMenu from "@/components/BurgerMenu/burgerMenu";
+import  Navigation  from "@/components/Navigation/Navigation";
 
 import { useState } from "react";
 
@@ -21,6 +22,7 @@ export default function Home() {
               <h1 className={css.title}>
                petl<IoHeart className={css.heart} />ve
               </h1>
+              < Navigation />
               <div className={css.userMenu}>
                 <FaUserCircle className={css.userIcon} />
                  <button className={css.menuButton} onClick={() => setIsMenuOpen(true)}>

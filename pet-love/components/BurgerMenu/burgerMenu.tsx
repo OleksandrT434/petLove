@@ -1,5 +1,6 @@
 import css from "./burgerMenu.module.css";
 import { IoClose } from "react-icons/io5";
+import Navigation from "@/components/Navigation/Navigation";
 
 type Props = {
     isMenuOpen?: boolean;
@@ -17,17 +18,7 @@ export default function BurgerMenu({onClose, isMenuOpen}: Props)  {
         <IoClose />
       </button>
 
-      <nav className={css.navMenu} aria-label="Main navigation">
-        <button type="button" className={css.menuButton}>
-          News
-        </button>
-        <button type="button" className={css.menuButton}>
-          Find pet
-        </button>
-        <button type="button" className={css.menuButton}>
-          Our friends
-        </button>
-      </nav>
+      <Navigation  />
 
       <div className={css.actions}>
         <button type="button" className={css.authButton}>
