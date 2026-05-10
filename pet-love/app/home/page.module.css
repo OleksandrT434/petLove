@@ -1,18 +1,19 @@
 .container{
     display: flex;
-    align-items: center;
-    height: 390px;
+    flex-direction: column;
+    height: 100%;
     background-color: #f6b83d;
     border-radius: 30px;
 }
 .header{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    box-sizing: border-box;
     justify-content: space-between;
     width: 100%;
-    padding: 40px;
-    
-    
+    padding-top: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .title{
@@ -33,15 +34,62 @@
 .userIcon{
     color: #fff;
     font-size: 40px;
-    margin-left: 40px;
+    margin-right: 12px;
 }
 
 .menuButton{
     background: none;
     border: none;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
+
+.menuButton:hover {
+  transform: scale(1.1);
+}
+
 .menuIcon{
     color: #fff;
     font-size: 40px;
+    transition: transform 0.3s ease;
+}
+.menuButton:hover .menuIcon {
+    transform: rotate(90deg);
+}
+
+.banner{
+    display: block;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+}
+.bannerTitle{
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 96%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+.word{
+    color: rgba(255, 255, 255, 0.4);
+}
+.bannerSubtitle{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+.pictureWrapper{
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto;
+}
+.dogImage{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    object-fit: cover;
 }
