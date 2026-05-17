@@ -1,6 +1,7 @@
 import css from "./burgerMenu.module.css";
 import { IoClose } from "react-icons/io5";
 import Navigation from "@/components/Navigation/Navigation";
+import AuthActoins from "@/components/AuthActions/AuthActions";
 
 type Props = {
     isMenuOpen?: boolean;
@@ -18,16 +19,9 @@ export default function BurgerMenu({onClose, isMenuOpen}: Props)  {
         <IoClose />
       </button>
 
-      <Navigation  />
-
-      <div className={css.actions}>
-        <button type="button" className={css.authButton}>
-          LOG IN
-        </button>
-        <button type="button" className={css.regButton}>
-          REGISTRATION
-        </button>
-      </div>
+      <Navigation className={css.burgerNav} />
+      <AuthActoins />
+      
     </aside>
   );
 }

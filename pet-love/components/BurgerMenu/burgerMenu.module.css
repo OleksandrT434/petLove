@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 218px;
   min-height: 100vh;
   padding: 40px 20px;
@@ -37,29 +37,6 @@
   margin-top: auto;
 }
 
-.authButton,
-.regButton {
-  width: 178px;
-  height: 42px;
-  border-radius: 30px;
-  border: none;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 129%;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.authButton {
-  background: #f6b83d;
-  color: #fff;
-}
-
-.regButton {
-  background: #fff4df;
-  color: #f6b83d;
-}
 .open {
   transform: translateX(0);
   transition: transform 0.3s ease;
@@ -70,21 +47,29 @@
   transition: transform 0.3s ease;
   backdrop-filter: blur(5px);
 }
+
+.burgerNav {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.burgerNav .menuButton {
+  width: 100%;
+  max-width: 220px;
+}
+
 @media screen and (min-width: 768px) {
   .burgerMenu {
     width: 374px;
-    justify-content: center;
   }
   .actions {
     flex-direction: row;
     gap: 8px;
   }
-  .authButton{
-    width: 119px;
-  }
-  .regButton{
-    width: 149px;
-}
+
 }
 @media screen and (min-width: 1280px) {
   .burgerMenu {

@@ -1,0 +1,52 @@
+.authButton,
+.regButton {
+  width: 178px;
+  height: 42px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.authButton {
+  background: #f6b83d;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.regButton {
+  background: #fff4df;
+  color: #f6b83d;
+}
+@media screen and (min-width: 768px){
+    .authActions{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        }
+    .authButton {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    padding: 15px 35px;
+    width: 119px;
+    height: 50px;   
+    margin: 0;
+  }
+  .regButton {
+    border-radius: 30px;
+    padding: 15px 20px;
+    width: 149px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  
+
+  
+}

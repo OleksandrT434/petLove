@@ -1,19 +1,28 @@
+.homePage {
+    max-width: 1440px;
+    margin: 0 auto;
+}
 .container{
     display: flex;
     flex-direction: column;
-    height: 100%;
     background-color: #f6b83d;
     border-radius: 30px;
 }
 .header{
+    position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     box-sizing: border-box;
     justify-content: space-between;
     width: 100%;
-    padding-top: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 18px 20px 0;
+}
+.headerNav{
+    display: none;
+}
+
+.desktopActions{
+    display: none;
 }
 
 .title{
@@ -89,8 +98,7 @@
     color: #fff;
 }
 .pictureWrapper{
-    width: 100%;
-    max-width: 335px;
+    max-width: 100%;
     margin: 0 auto;
 }
 .dogImage{
@@ -120,6 +128,10 @@
   .nav {
     display: flex;
   }
+  .header {
+    padding: 18px 64px 0;
+  }
+
   .bannerTitle{
     font-size: 90px;
     width: 760px;
@@ -129,9 +141,33 @@
   .userIcon {
     display: none;
   }
+  .title {
+    flex: 1; 
+    font-weight: 800; 
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    color: #fff;
+  }
+  
   .banner{
     flex-direction: row;
     padding: 16px 64px;
     align-items: center;
   }
+  .desktopActions {
+      display: flex;
+      flex: 1; 
+      justify-content: flex-end;
+   }
+  .headerNav {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-width: 0;
+       max-width: 520px;
+       padding: 0 20px;
+       flex: 1;
+
+   } 
 }

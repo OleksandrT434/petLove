@@ -1,8 +1,12 @@
 import css from "./Navigation.module.css";
 
-export default function Navigation() {
+type NavigationProps = {
+  className?: string;
+};
+
+export default function Navigation({ className }: NavigationProps) {
   return (
-    <nav className={css.navMenu} aria-label="Main navigation">
+    <nav className={[css.navMenu, className].filter(Boolean).join(" ")} aria-label="Main navigation">
       <button type="button" className={css.menuButton}>
         News
       </button>

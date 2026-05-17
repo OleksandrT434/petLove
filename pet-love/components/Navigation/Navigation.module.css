@@ -1,7 +1,3 @@
-.navMenu {
-  display: none;
-}
-
 .menuButton {
   width: 119px;
   height: 48px;
@@ -21,6 +17,8 @@
   opacity: 0.8;
   color: #fff;
 }
+
+
 
 @media screen and (min-width: 1280px) {
     .navMenu {
