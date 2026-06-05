@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Splash from './splash';
 
+
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [showSplash, setShowSplash] = useState(true);
 

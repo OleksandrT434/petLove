@@ -6,6 +6,11 @@ type Props = {
 }
 
 export default function NewsCard({ news }: Props) {
+  const formattedDate = new Date(news.date).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+  });
   return (
     <article className={css.card}>
       <img src={news.imgUrl} alt={news.title} className={css.image} />
@@ -13,7 +18,8 @@ export default function NewsCard({ news }: Props) {
 
       <p className={css.text}>{news.text}</p>
 
-      <span className={css.date}>{news.date}</span>
+      <span className={css.date}>{formattedDate}</span>
+      <a href={news.url} className={css.link} target="_blank" rel="noopener noreferrer">Read more</a>
     </article>
   );
 }
