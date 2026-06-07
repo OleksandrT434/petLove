@@ -9,7 +9,7 @@ export default function SearchInput() {
   const [keyword, setKeyword] = useState("");
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/home/news?keyword=${keyword}`);
+    router.push(`/news?keyword=${keyword}`);
   }
 
   return (

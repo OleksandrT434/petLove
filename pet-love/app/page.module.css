@@ -1,0 +1,173 @@
+.homePage {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #f6b83d;
+    border-radius: 30px;
+}
+.header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    padding: 18px 20px 0;
+}
+.headerNav{
+    display: none;
+}
+
+.desktopActions{
+    display: none;
+}
+
+.title{
+   font-family: var(--font-family);
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 100%;
+   letter-spacing: 0em;
+   color: #fff;
+   display: flex;
+   align-items: center;
+}
+
+.heart{
+    color: #ffffff;
+}
+
+.userIcon{
+    color: #fff;
+    font-size: 40px;
+    margin-right: 12px;
+}
+
+.menuButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.menuButton:hover {
+  transform: scale(1.1);
+}
+
+.menuIcon{
+    color: #fff;
+    font-size: 40px;
+    transition: transform 0.3s ease;
+}
+.menuButton:hover .menuIcon {
+    transform: rotate(90deg);
+}
+
+.nav {
+  display: none;
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    gap: 24px;
+}
+.bannerTitle{
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 96%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    flex: 1;
+}
+.word{
+    color: rgba(255, 255, 255, 0.4);
+}
+.bannerSubtitle{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+.pictureWrapper{
+    max-width: 100%;
+    margin: 0 auto;
+}
+.dogImage{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+    .bannerTitle{
+        font-size: 80px;
+    }
+    .bannerSubtitle{
+        font-size: 14px;
+        line-height: 129%;
+        width: 255px;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+  .menuButton {
+    display: none;
+  }
+  .nav {
+    display: flex;
+  }
+  .header {
+    padding: 18px 64px 0;
+  }
+
+  .bannerTitle{
+    font-size: 90px;
+    width: 760px;
+    margin: 0;
+    padding-top: 112px;
+  }
+  .userIcon {
+    display: none;
+  }
+  .title {
+    flex: 1; 
+    font-weight: 800; 
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    color: #fff;
+  }
+  
+  .banner{
+    flex-direction: row;
+    padding: 16px 64px;
+    align-items: center;
+  }
+  .desktopActions {
+      display: flex;
+      flex: 1; 
+      justify-content: flex-end;
+   }
+  .headerNav {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-width: 0;
+       max-width: 520px;
+       padding: 0 20px;
+       flex: 1;
+
+   } 
+}
