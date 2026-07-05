@@ -1,0 +1,40 @@
+.menuButton {
+  width: 119px;
+  height: 48px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  background-color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #262626;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuButton:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+
+
+
+@media screen and (min-width: 1280px) {
+    .navMenu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    .menuButton {
+        color: #fff;
+        background-color: #f6b83d;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        letter-spacing: -0.03em;
+    }
+}

@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 27px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  text-decoration: none;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.home .logo {
+  color: white;
+}
+
+.default .logo {
+  color: #262626;
+}
+
+.logoHeart {
+  color: #fff;
+}
+.home .logoHeart {
+  color: white;
+}
+
+.default .logoHeart {
+  color: #f6b83d;
+}
+
+.headerNav {
+  display: none;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.authActions {
+  display: none;
+} 
+
+.userIcon {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 40px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menuIcon {
+  color: #fff;
+  font-size: 32px;
+}
+.default .menuIcon {
+  color: #262626;
+}
+.default .userIcon {
+    display: none   ;
+}
+
+@media (min-width: 768px) {
+  .userIcon {
+    display: block;
+  }
+  .authActions {
+    display: flex;
+    gap: 8px;
+  }
+  .homeAuth {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    padding: 27px 64px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+  .homeAuth {
+    display: flex;
+  }
+
+  .headerNav {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .desktopActions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .userIcon {
+    display: none;
+  }
+
+  .menuButton {
+    display: none;
+  }
+}

@@ -1,0 +1,38 @@
+.form {
+  position: relative;
+  min-width: 335px;
+}
+
+.search {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #d9d9d9;
+  border-radius: 30px;
+  padding: 0 52px 0 16px;
+  box-sizing: border-box;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.searchIcon {
+  font-size: 22px;
+  color: #150a0a;
+}
+@media (min-width: 768px) {
+  .form {
+    min-width: 230px;
+  }
+}
+

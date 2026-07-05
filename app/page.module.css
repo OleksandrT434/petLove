@@ -1,0 +1,210 @@
+.pageWrapper {
+  max-width: 1440px;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.hero {
+  background-color: #f6b83d;
+  border-radius: 30px;
+  min-width: 335px;
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+}
+.hero,
+.pictureCard {
+  margin: 0 20px;
+}
+
+.textBlock {
+  position: absolute;
+  top: 118px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bannerTitle {
+  width: 100%;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.accent {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.bannerSubtitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.28px;
+  color: #fff;
+  max-width: 295px;
+  margin: 0;
+  align-items: flex-start;
+}
+
+
+.pictureCard {
+  min-width: 335px;
+  border-radius: 30px;
+  overflow: hidden;
+  height:402px;
+}
+
+.dogImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-width: 704px;
+    height: 496px;
+    border-radius: 60px;
+  }
+
+  .heroHeader {
+    top: 18px;
+    left: 32px;
+    right: 32px;
+  }
+
+  .logoText {
+    font-size: 24px;
+  }
+
+  .headerNav {
+    display: flex;
+    gap: 10px;
+  }
+
+  .userIcon {
+    display: block;
+  }
+
+  .menuButton {
+    display: flex; 
+  }
+
+  .textBlock {
+    top: 112px;
+    left: 32px;
+    right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .bannerTitle {
+    font-size: 80px;
+    line-height: 96%;
+    letter-spacing: -0.03em;
+  }
+
+  .bannerSubtitle {
+    width: 255px;
+    align-self: flex-end;
+    font-size: 18px;
+    line-height: 122%;
+  }
+
+  .pictureCard {
+    border-radius: 60px;
+    height: 496px;
+    min-width: 704px;
+}
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    height: 384px;
+    padding: 0;
+  }
+
+  .heroHeader {
+    top: 27px;
+    left: 64px;
+    right: 64px;
+  }
+   .hero,
+  .pictureCard{
+    margin:0 32px;
+  }
+
+  .logoText {
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: -1.12px;
+  }
+
+  .logoHeart {
+    font-size: 23px;
+  }
+
+  .headerNav {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+  }
+
+  .desktopActions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .userIcon {
+    display: none; 
+  }
+
+  .textBlock {
+    top: 178px;
+    left: 64px;
+    right: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .bannerTitle {
+    max-width: 760px;
+    width: auto;
+    font-size: 90px;
+    line-height: 87px;
+    font-weight: 700;
+    padding-right: 0;
+    color: #fff;
+    margin: 0;
+  }
+
+  .bannerSubtitle {
+    max-width: 255px;
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 122%;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+
+  .pictureCard {
+    border-radius: 60px;
+    height: 384px;
+  }
+}
