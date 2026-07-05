@@ -3,6 +3,7 @@ import NewsCard from "@/components/NewsCard/NewsCard";
 import css from "./page.module.css";
 import SearchInput from "@/components/Searsh/SearchInput";
 import Header from "@/components/Header/Header";
+import Pagination from "@/components/Pagination/Pagination";
 
 type Props = {
     searchParams:Promise  <{
@@ -37,6 +38,7 @@ export default async function NewsPage( { searchParams }: Props) {
       ))}
     </div>
   </section>
+  <Pagination totalPages={data.totalPages} />
 </div>
   );
 }

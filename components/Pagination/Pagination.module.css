@@ -1,0 +1,121 @@
+.paginationWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 60px 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+
+.pagination a,
+.pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e0e0e0;
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 100%;
+}
+
+.pagination a:hover:not(.disabled a),
+.pagination button:hover:not(.disabled button) {
+    border-color: #f6b83d;
+    background-color: #fff9f0;
+    color: #f6b83d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(246, 184, 61, 0.15);
+}
+
+.selected a,
+.selected button {
+    background-color: #f6b83d;
+    color: white;
+    border-color: #f6b83d;
+    box-shadow: 0 4px 12px rgba(246, 184, 61, 0.3);
+    font-weight: 600;
+}
+
+.selected a:hover,
+.selected button:hover {
+    background-color: #e5a428;
+    border-color: #e5a428;
+}
+
+.disabled a,
+.disabled button {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #d0d0d0;
+}
+
+.disabled a:hover,
+.disabled button:hover {
+    background-color: white;
+    border-color: #d0d0d0;
+    transform: none;
+    box-shadow: none;
+}
+
+.break {
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    color: #999;
+    font-weight: 500;
+}
+
+.endButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    padding: 0;
+}
+
+.endButton:hover:not(.disabled) {
+    color: #f6b83d;
+    transform: scale(1.15);
+}
+
+.endButton.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page{
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background-color: #fff;
+}
