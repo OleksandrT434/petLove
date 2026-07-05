@@ -1,5 +1,6 @@
 import nextServer from "./api";
 import { NewsResponse } from "@/types/card";
+import{ Friend } from "@/types/friends";
 
 export const NewsApi = {
     getNews: async (keyword: string, page = 1, limit = 6) => {
@@ -15,3 +16,10 @@ export const NewsApi = {
         }
     }
 }
+
+export const FriendsApi = {
+    async getFriends()  {
+        const response = await nextServer.get<Friend[]>("/friends");
+        return response.data;
+    }
+    } 
