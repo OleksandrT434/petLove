@@ -7,15 +7,19 @@ import Header from "@/components/Header/Header";
 type Props = {
     searchParams:Promise  <{
         keyword?: string;
+        page?: string;
     }
 >;
   }
 
 export default async function NewsPage( { searchParams }: Props) {
-
   const params = await searchParams
+
   const keyword = params.keyword ?? "";
-  const data = await NewsApi.getNews(keyword);
+  const page = Number(params.page ?? 1);
+
+  const data = await NewsApi.getNews(keyword, page, 6);
+  
   
   return (
     <div className={css.container}>
