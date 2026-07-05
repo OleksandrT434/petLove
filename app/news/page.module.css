@@ -43,6 +43,16 @@
     gap:24px;
     row-gap: 32px;
 }
+.topBar{
+  margin-bottom: 0;
+}
+.title{
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #262626;
+}
 }
 
 @media(min-width:1280px){

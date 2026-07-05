@@ -8,6 +8,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [isChecking, setIsChecking] = useState(true);
   const [showSplash, setShowSplash] = useState(() => {
     if (typeof window !== "undefined") {
       return !sessionStorage.getItem("splashShown");
@@ -19,13 +20,14 @@ export default function RootLayout({
     if (!showSplash) return;
 
     const timer = setTimeout(() => {
-      setShowSplash(false);
       sessionStorage.setItem("splashShown", "true");
+      setShowSplash(false);
+      setIsChecking(false);
     }, 2000);
-
     return () => clearTimeout(timer);
-  }, [showSplash]);
-
+    
+  }, []);
+console.log("render", showSplash);
   return (
     <html lang="en">
       <body>
