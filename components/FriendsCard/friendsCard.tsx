@@ -8,16 +8,19 @@ type Props = {
 };
 
 export default function FriendsCard({ friend }: Props) {
+    const workTime = friend.workDays?.find(day => day.isOpen);
+    const badgeText = workTime ? `${workTime.from} - ${workTime.to}` : "Day and night";
 
     return (
         <article className={css.card}>
-            <Image 
+            <span className={css.badge}>{badgeText}</span>
+               <Image 
                  src={friend.imageUrl} 
                  alt={friend.title} 
                  width={80}
                  height={80}
-                 className={css.image}  
-                        />
+                 className={css.image}     
+                    />
                         <div className={css.info}>
                     <h3 className={css.title}>{friend.title}</h3>
                 <p className={css.adress}>    

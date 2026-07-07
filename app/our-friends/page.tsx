@@ -10,15 +10,18 @@ const data = await FriendsApi.getFriends();
     return (
         <div className={css.friendsSection}>
             <Header variant="default" />
-            <main>
+            <main className={css.main}>
                 <section>
-                <h1>Our Friends</h1>
-                <div className={css.cards}>
-                    {data.map((friend) => (
-                        <FriendsCard key={friend._id} friend={friend} />
-                    ))}
-                </div>
-            </section>
+                  <h1 className={css.title}>Our Friends</h1>
+                   <div className={css.cards}>
+                     {data.map(friend => (
+                        <FriendsCard
+                          key={friend._id}
+                          friend={friend}
+                         />
+                     ))}
+                    </div>
+                </section>
             </main>
         </div>
     );

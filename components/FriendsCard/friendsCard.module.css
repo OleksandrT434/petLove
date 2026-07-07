@@ -7,6 +7,7 @@
     align-items: center;
     gap: 14px;
     padding: 20px;
+    position: relative;
 }
 .info{
     gap:8px;
@@ -42,4 +43,15 @@
     white-space: nowrap;
     overflow: hidden;      
     text-overflow: ellipsis;
+}
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 8px 14px;
+    border-radius: 30px;
+    background: #fff4df;
+    color: #f6b83d;
+    font-size: 12px;
+    font-weight: 500;
 }

@@ -1,3 +1,4 @@
+import "./globals.css";
 import SplashGate from "./SplashGate";
 
 export default function RootLayout({
