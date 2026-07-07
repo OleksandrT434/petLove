@@ -7,9 +7,8 @@ import FriendsCard from "@/components/FriendsCard/friendsCard";
 export default async function OurFriendsPage() {
 const data = await FriendsApi.getFriends();
        
-
     return (
-        <div>
+        <div className={css.friendsSection}>
             <Header variant="default" />
             <main>
                 <section>

@@ -1,0 +1,10 @@
+.friendsSection{
+    background: #f9f9f9;
+    margin: 0 auto;
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
