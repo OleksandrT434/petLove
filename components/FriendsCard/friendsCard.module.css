@@ -22,11 +22,6 @@
     line-height: 129%;
     letter-spacing: -0.02em;
     color: rgba(38, 38, 38, 0.5);
-    
-}
-.title{
-    margin-bottom: 14px;
-    margin-top: 40px;
 }
 .info a {
     text-decoration: none;
@@ -55,3 +50,14 @@
     font-size: 12px;
     font-weight: 500;
 }
+
+@media screen and (min-width: 768px) {
+    .card {
+        width: 342px;  
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .card {
+        width: calc((100% - 40px) / 3); }
+    }
