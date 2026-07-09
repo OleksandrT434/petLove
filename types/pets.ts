@@ -1,5 +1,5 @@
 export interface Pet {
-    id: string;
+    _id: string;
     species: string;
     category: string;
     price: number;
@@ -14,4 +14,11 @@ export interface Pet {
     user: string;
     popularity: number;
     updatedAt: string;
+}
+
+export interface PetResponse {
+    page: number,
+    perPage: number,
+    totalPages: number,
+    results: Pet[] 
 }
