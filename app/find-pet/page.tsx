@@ -1,6 +1,8 @@
 export default function FindPetPage() {
     return (
-        <div>find-pet</div>
+        <section>
+            <h1>Find your favorite pet</h1>
+        </section>
     );
 }
 
