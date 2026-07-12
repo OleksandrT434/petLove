@@ -1,0 +1,32 @@
+.section {
+    background: #f9f9f9;
+    min-height: 100vh;
+}
+
+.main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 64px 80px;
+}
+
+.title { 
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #262626;
+    margin: 60px 20px 40px;
+}
+
+.petsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+       font-size: 54px;  
+}
+}

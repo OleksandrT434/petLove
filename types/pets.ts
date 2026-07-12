@@ -2,7 +2,7 @@ export interface Pet {
     _id: string;
     species: string;
     category: string;
-    price: number;
+    price?: number;
     title: string;
     name: string;
     birthday: string;
