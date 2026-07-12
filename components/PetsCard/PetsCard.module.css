@@ -1,0 +1,9 @@
+.card{
+    width: 335px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    
+}

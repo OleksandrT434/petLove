@@ -12,14 +12,23 @@ export default function PetsCard({ pet }: Props) {
             <Image 
                 src={pet.imgURL}
                 alt={pet.name}
-                width={80}
-                height={80}
+                width={287}
+                height={187}
                 className={css.image}
             />
-            <div className={css.info}>
-                <h3 className={css.title}>{pet.name}</h3>
-                <p className={css.description}>{pet.comment}</p>
+            <section className={css.info}>
+                <h2 className={css.title}>{pet.title}</h2>
+                <p className={css.name}>Name {pet.name}</p>
+                <p className={css.text}>Birthday {pet.birthday}</p>
+                <p className={css.text}>Sex {pet.sex}</p>
+                <p className={css.text}>Species {pet.species}</p>
+                <p className={css.text}>Category {pet.category}</p>
+            </section>
+            <div className={css.descriptionContainer}>
+                <h2 className={css.description}>{pet.comment}</h2>
+                <h2 className={css.price}>{pet.price}</h2>
             </div>
+            <button className={css.button}>Learn more</button>
         </article>
     );
 }
