@@ -56,20 +56,19 @@ export default function PetsCard({ pet }: Props) {
       {pet.comment}
     </p>
 
-      {pet.price !== undefined && (
-        <p className={css.price}>
-         ${pet.price}
-        </p>)}
+     
+       <div className={css.footer}>
+          {pet.price !== undefined && (
+            <p className={css.price}>${pet.price}</p>
+           )}
 
-    <div className={css.actions}>
-      <button className={css.button}>
-        Learn more
-      </button>
-
-      <button className={css.favorite}>
-        <FaRegHeart className={css.heart} />
-      </button>
-    </div>
+         <div className={css.actions}>
+           <button className={css.button}>Learn more</button>
+           <button className={css.favorite}>
+             <FaRegHeart className={css.heart} />
+          </button>
+        </div>
+       </div>
   </div>
 </article>
     );

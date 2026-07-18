@@ -8,6 +8,8 @@
     gap: 14px;
     padding: 20px;
     position: relative;
+    box-sizing: border-box;
+
 }
 .info{
     gap:8px;
@@ -58,5 +60,6 @@
 
 @media screen and (min-width: 1280px) {
     .card {
-        width: calc((100% - 40px) / 3); }
+        flex: 0 1 calc(33.333% - 21.34px);
     }
+}

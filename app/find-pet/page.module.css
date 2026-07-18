@@ -1,7 +1,6 @@
 .container {
   background: #f9f9f9;
-  min-height: 100vh;
-  margin: 0 auto;
+  max-width:1440px
 }
 
 .content {
@@ -18,7 +17,7 @@
 .title {
   font-size: 28px;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: -0.03em;
   color: #262626;
 }
@@ -30,7 +29,7 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .content {
     padding: 32px;
   }
@@ -44,22 +43,20 @@
   .title {
     font-size: 54px;
   }
-  .cards{
-    display:flex;
-    flex-wrap:wrap;
-    gap:24px;
-    row-gap: 32px;
-}
+
+  .cards {
+    gap: 24px;
+    justify-content: center;
+  }
 }
 
-@media screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
   .content {
     padding: 60px 64px;
   }
 
   .cards {
     gap: 32px;
-    row-gap: 40px;
+    justify-content: center;
   }
 }
-

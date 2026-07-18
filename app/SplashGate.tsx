@@ -13,7 +13,7 @@ export default function SplashGate({ children }: Props) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 1500);
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, []);
