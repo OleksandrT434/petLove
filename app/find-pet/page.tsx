@@ -4,23 +4,22 @@ import { PetsApi } from "@/lib/api/clientApi";
 import css from "./page.module.css";
 
 export default async function FindPetPage() {
-    const pets = await PetsApi.getPets();
+  const pets = await PetsApi.getPets();
 
-    return (
-        <section className={css.section}>
-          <Header variant="default" />
+  return (
+    <div className={css.container}>
+      <Header variant="default" />
+      <section className={css.content}>
+        <div className={css.topBar}>
           <h1 className={css.title}>Find your favorite pet</h1>
-             <main className={css.main}>
-              <div className={css.petsList}>
-                   {pets.map((pet) => (
-                       <PetsCard
-                        key={pet._id}
-                        pet={pet}
-                        />
-                    ))}
-                </div>
-             </main>
-        </section>
-        );
-}
+        </div>
+        <div className={css.cards}>
+          {pets.map((pet) => (
+            <PetsCard key={pet._id} pet={pet} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+} 
 

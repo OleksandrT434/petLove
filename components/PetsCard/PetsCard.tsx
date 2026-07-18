@@ -1,6 +1,9 @@
 import {type Pet} from "@/types/pets";
 import css from "./PetsCard.module.css";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+
 
 type Props = {
     pet: Pet;
@@ -21,7 +24,8 @@ export default function PetsCard({ pet }: Props) {
     <div className={css.header}>
       <h2 className={css.title}>{pet.title}</h2>
           <div className={css.rating}>
-               ⭐ {pet.popularity}
+               <FaStar  className={css.star}/>
+               {pet.popularity}
          </div>
     </div>
 
@@ -63,7 +67,7 @@ export default function PetsCard({ pet }: Props) {
       </button>
 
       <button className={css.favorite}>
-        🤍
+        <FaRegHeart className={css.heart} />
       </button>
     </div>
   </div>
