@@ -5,13 +5,17 @@ import css from "./SearchInput.module.css";
 import { useRouter } from "next/navigation";
 import { IoIosSearch } from "react-icons/io";
 
+type SearchInputProps = {
+    basePath: string;
+};
 
-export default function SearchInput() {
+
+export default function SearchInput({basePath}:SearchInputProps ) {
   const router = useRouter();
   const [keyword, setKeyword] = useState("");
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/news?keyword=${keyword}`);
+    router.push(`${basePath}?keyword=${keyword}`);
   }
 
   return (

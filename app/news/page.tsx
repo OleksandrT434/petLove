@@ -29,7 +29,7 @@ export default async function NewsPage( { searchParams }: Props) {
   <section className={css.content}>
     <div className={css.topBar}>
       <h1 className={css.title}>News</h1>
-      <SearchInput />
+      <SearchInput basePath="/news"/>
     </div>
 
     <div className={css.cards}>
@@ -38,7 +38,7 @@ export default async function NewsPage( { searchParams }: Props) {
       ))}
     </div>
   </section>
-  <Pagination totalPages={data.totalPages} />
+  <Pagination totalPages={data.totalPages} basePath="/news" />
 </div>
   );
 }

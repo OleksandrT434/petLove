@@ -22,3 +22,16 @@ export interface PetResponse {
     totalPages: number,
     results: Pet[] 
 }
+
+export type GetPetsParams = {
+  keyword?: string;
+  category?: string;
+  species?: string;
+  locationId?: string;
+  sex?: string;
+  byDate?: boolean;
+  byPrice?: boolean;
+  byPopularity?: boolean;
+  page?: number;
+  limit?: number;
+};

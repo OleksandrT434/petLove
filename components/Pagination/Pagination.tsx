@@ -7,9 +7,10 @@ import styles from "./Pagination.module.css";
 
 type Props = {
   totalPages: number;
+  basePath: string;
 };
 
-export default function Pagination({ totalPages }: Props) {
+export default function Pagination({ totalPages, basePath }: Props) {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [isMobile, setIsMobile] = useState(false);
@@ -30,19 +31,19 @@ export default function Pagination({ totalPages }: Props) {
         const newPage = new URLSearchParams(searchParams);
 
         newPage.set("page", String(selected + 1));
-        router.push(`/news?${newPage.toString()}`);
+        router.push(`${basePath}?${newPage.toString()}`);
     };
 
     const handleFirstPage = () => {
         const newPage = new URLSearchParams(searchParams);
         newPage.set("page", "1");
-        router.push(`/news?${newPage.toString()}`);
+        router.push(`${basePath}?${newPage.toString()}`);
     };
 
     const handleLastPage = () => {
         const newPage = new URLSearchParams(searchParams);
         newPage.set("page", String(totalPages));
-        router.push(`/news?${newPage.toString()}`);
+        router.push(`${basePath}?${newPage.toString()}`);
     };
 
     return (
