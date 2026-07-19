@@ -3,7 +3,7 @@ import Header from "@/components/Header/Header";
 import { PetsApi } from "@/lib/api/clientApi";
 import css from "./page.module.css";
 import Pagination from "@/components/Pagination/Pagination";
-import SearchInput from "@/components/Searsh/SearchInput";
+import PetsFilters from "@/components/PetsFilters/PetsFilters";
 
 type Props = {
     searchParams: Promise <{
@@ -31,7 +31,7 @@ const pets = await PetsApi.getPets({
   return (
     <div className={css.container}>
       <Header variant="default" />
-      <SearchInput basePath="/find-pet"/>
+      <PetsFilters/>
       <section className={css.content}>
         <div className={css.topBar}>
           <h1 className={css.title}>Find your favorite pet</h1>
