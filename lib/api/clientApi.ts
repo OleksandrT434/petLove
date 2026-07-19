@@ -35,7 +35,21 @@ export const PetsApi = {
         params,
       }
     );
+    return response.data;
+  },
+  async getCategories() {
+    const response = await nextServer.get<string[]>("/notices/categories");
+    return response.data;
+  },
 
+  async getSpecies() {
+    const response = await nextServer.get<string[]>("/notices/species");
+    return response.data;
+  },
+
+  async getSex() {
+    const response = await nextServer.get<string[]>("/notices/sex");
     return response.data;
   },
 };
+

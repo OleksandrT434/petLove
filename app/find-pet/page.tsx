@@ -9,6 +9,7 @@ type Props = {
     searchParams: Promise <{
         page?:string
         keyword?:string
+        category?:string
     }>
 }
 
@@ -17,11 +18,13 @@ export default async function FindPetPage({searchParams}: Props) {
   const params = await searchParams
   const page = Number(params.page ?? 1);
   const keyword = params.keyword ?? "";
+  const category = params.category ?? "";
 
 const pets = await PetsApi.getPets({
     page,
     limit: 6,
     keyword,
+    category
     
 });
 
