@@ -3,9 +3,13 @@ import axios from 'axios';
 const baseURL =
   (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000').replace(/\/+$/, '') + '/api';
 
-export const nextServer = axios.create({
+export const publicApi = axios.create({
+  baseURL,
+});
+
+export const privateApi = axios.create({
   baseURL,
   withCredentials: true,
 });
 
-export default nextServer;
+export default publicApi

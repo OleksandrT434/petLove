@@ -1,0 +1,44 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 24px;
+  border-radius: 30px;
+  background: #fff4df;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+
+  min-width: 200px;
+  height: 48px;
+
+  padding: 0 16px;
+
+  border-radius: 30px;
+  background: white;
+
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.searchBtn,
+.resetBtn {
+  height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}

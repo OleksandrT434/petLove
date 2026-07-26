@@ -1,4 +1,4 @@
-import nextServer from "./api";
+import { publicApi, privateApi } from "./api";
 import { NewsResponse } from "@/types/card";
 import{ Friend } from "@/types/friends";
 import { type PetResponse } from "@/types/pets";
@@ -7,7 +7,7 @@ import {type GetPetsParams } from "@/types/pets"
 export const NewsApi = {
     getNews: async (keyword: string, page = 1, limit = 6) => {
         try {
-            const response = await nextServer.get<NewsResponse>("/news", {
+            const response = await publicApi.get<NewsResponse>("/news", {
                 params: { keyword, page, limit },
             });
             return response.data;
@@ -21,7 +21,7 @@ export const NewsApi = {
 
 export const FriendsApi = {
     async getFriends()  {
-        const response = await nextServer.get<Friend[]>("/friends");
+        const response = await publicApi.get<Friend[]>("/friends");
         return response.data;
     }
     } 
@@ -29,7 +29,7 @@ export const FriendsApi = {
 
 export const PetsApi = {
   async getPets(params: GetPetsParams = {}) {
-    const response = await nextServer.get<PetResponse>(
+    const response = await publicApi.get<PetResponse>(
       "/notices",
       {
         params,
@@ -37,18 +37,23 @@ export const PetsApi = {
     );
     return response.data;
   },
-  async getCategories() {
-    const response = await nextServer.get<string[]>("/notices/categories");
+
+ async getCategories() {
+  try {
+    const response = await publicApi.get("/notices/categories");
     return response.data;
-  },
+  } catch (error) {
+    throw error;
+  }
+},
 
   async getSpecies() {
-    const response = await nextServer.get<string[]>("/notices/species");
+    const response = await publicApi.get<string[]>("/notices/species");
     return response.data;
   },
 
   async getSex() {
-    const response = await nextServer.get<string[]>("/notices/sex");
+    const response = await publicApi.get<string[]>("/notices/sex");
     return response.data;
   },
 };
