@@ -35,3 +35,11 @@ export type GetPetsParams = {
   page?: number;
   limit?: number;
 };
+
+export type City = {
+  _id: string;
+  cityEn: string;
+  stateEn: string;
+  countyEn: string;
+  useCounty: string;
+};
