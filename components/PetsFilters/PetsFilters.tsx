@@ -5,6 +5,8 @@ import css from "./PetsFilters.module.css";
 import {PetsApi} from "@/lib/api/clientApi"
 import { useState, useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { City } from "@/types/pets";
+
 
 export default function PetsFilters() {
 
@@ -15,6 +17,8 @@ export default function PetsFilters() {
   const [categories, setCategories] = useState<string[]>([]);
   const [gender, setGender] = useState<string[]>([])
   const [type, setType] = useState<string[]>([])
+
+  const [locations, setLocations] = useState<City[]>([]);
 
   
 
@@ -29,6 +33,7 @@ export default function PetsFilters() {
         setCategories(categories),
         setGender(sex),
         setType(species)
+        setLocations(locations)
       } catch (error) {
         console.error(error)
       }
@@ -100,5 +105,6 @@ export default function PetsFilters() {
         </select>
       </div>
     </section>
+    
             );
 }

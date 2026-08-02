@@ -3,6 +3,7 @@ import { NewsResponse } from "@/types/card";
 import{ Friend } from "@/types/friends";
 import { type PetResponse } from "@/types/pets";
 import {type GetPetsParams } from "@/types/pets"
+import { City } from "@/types/pets";
 
 export const NewsApi = {
     getNews: async (keyword: string, page = 1, limit = 6) => {
@@ -56,5 +57,11 @@ export const PetsApi = {
     const response = await publicApi.get<string[]>("/notices/sex");
     return response.data;
   },
+  async searchCities(keyword: string) {
+    const response = await publicApi.get<City[]>("/cities", {
+      params: { keyword }
+    });
+    return response.data;
+  }
 };
 
