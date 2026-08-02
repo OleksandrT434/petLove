@@ -12,6 +12,7 @@ type Props = {
         category?:string
         sex?: string;
         species?: string;
+        locationId?: string;
     }>
 }
 
@@ -23,6 +24,7 @@ export default async function FindPetPage({searchParams}: Props) {
   const category = params.category ?? "";
   const sex = params.sex ?? "";
   const species = params.species ?? "";
+  const locationId = params.locationId ?? "";
  
 const pets = await PetsApi.getPets({
     page,
@@ -30,8 +32,9 @@ const pets = await PetsApi.getPets({
     keyword,
     category,
     sex,
-    species
-    
+    species,
+    locationId,
+  
 });
 
   return (
