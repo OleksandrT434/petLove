@@ -29,3 +29,23 @@
     border-radius: 30px;
     outline: none;
 }
+
+.searchIcon {
+  font-size: 22px;
+  color: #150a0a;
+}
+
+.clearButton {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background-color: #fff;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
