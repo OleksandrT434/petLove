@@ -40,11 +40,9 @@ const pets = await PetsApi.getPets({
   return (
     <div className={css.container}>
       <Header variant="default" />
-      <PetsFilters/>
       <section className={css.content}>
-        <div className={css.topBar}>
-          <h1 className={css.title}>Find your favorite pet</h1>
-        </div>
+        <h1 className={css.title}>Find your favorite pet</h1>
+        <PetsFilters/>
         <div className={css.cards}>
           {pets.results.map((pet) => (
             <PetsCard key={pet._id} pet={pet} />

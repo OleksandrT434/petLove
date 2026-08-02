@@ -5,7 +5,6 @@ import css from "./PetsFilters.module.css";
 import {PetsApi} from "@/lib/api/clientApi"
 import { useState, useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { City } from "@/types/pets";
 import LocationSearch from "../LocationAutocomplete/LocationAutocomplete";
 
 
@@ -49,29 +48,24 @@ export default function PetsFilters() {
     router.push(`${pathname}?${params.toString()}`)
     }
 
-
   return (
     <section className={css.filters}>
       <SearchInput basePath="/find-pet" />
 
       <div className={css.row}>
           <select
-  className={css.select}
-  onChange={(e) =>
-    handleFilterChange("category", e.target.value)
-  }
->
-  <option value="">Category</option>
-
-  {categories.map((category) => (
-    <option
-      key={category}
-      value={category}
-    >
-      {category}
-    </option>
-  ))}
-</select>
+              className={css.select}
+              onChange={(e) =>
+               handleFilterChange("category", e.target.value)}>
+               <option value="">Category</option>
+               {categories.map((category) => (
+              <option
+                  key={category}
+                  value={category}>
+                  {category}
+              </option>
+             ))}
+           </select>
 
         <select className={css.select}
            onChange={(e) =>
@@ -84,7 +78,6 @@ export default function PetsFilters() {
                 value={gender}>
                   {gender}
                 </option>    
-          
           ))}
         </select>
         <select className={css.select}
@@ -97,15 +90,10 @@ export default function PetsFilters() {
                 value={species}>
                   {species}
                 </option>    
-          
           ))}
         </select>
-
-        
-      </div>
-      <LocationSearch />
-
+        <LocationSearch />
+       </div>
     </section>
-    
-            );
+  );
 }
