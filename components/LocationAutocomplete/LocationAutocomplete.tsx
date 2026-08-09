@@ -5,7 +5,6 @@ import { City } from "@/types/pets";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import css from "./LocationAutocomplete.module.css";
 import { useRef } from "react";
-import { IoSearch } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 
 export default function LocationSearch() {

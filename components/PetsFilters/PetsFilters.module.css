@@ -16,30 +16,20 @@
   gap: 16px;
 }
 
-.select {
-  display: flex;
-  align-items: center;
-  min-width: 200px;
-  height: 48px;
-  padding: 0 16px;
-  border-radius: 30px;
-  background: white;
-  cursor: pointer;
-  border: none;
+.searchWrapper {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.filterItem,
+.locationWrapper {
+  flex: 0 0 calc((100% - 16px) / 2);
+  min-width: 0;
 }
 
 .actions {
   display: flex;
   gap: 12px;
-}
-
-.searchWrapper {
-  flex: 0 0 100%;
-}
-.select,
-.locationWrapper {
-  flex: 0 1 calc((100% - 16px) / 2);
-  min-width: 0;
 }
 
 .searchBtn,
@@ -51,20 +41,10 @@
   cursor: pointer;
 }
 
-
-
-  @media screen and (min-width: 768px) {
-  .select,
-  .wrapper {
-    flex-basis: calc((100% - 16px) / 2);
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .searchWrapper,
-  .select,
+  .filterItem,
   .locationWrapper {
-    flex: 0 1 calc((100% - 64px) / 5);
+    flex: 0 0 calc((100% - 64px) / 5);
   }
 }
-  

@@ -55,6 +55,7 @@ export default function PetsFilters() {
           <div className={css.searchWrapper}>
               <SearchInput basePath="/find-pet" />
            </div>
+            <div className={css.filterItem}>
           <CustomSelect
                  options={categories}
                  value={searchParams.get("category") ?? ""}
@@ -62,8 +63,8 @@ export default function PetsFilters() {
                  onChange={(value) =>
                   handleFilterChange("category", value)
                 }
-            />
-
+            /></div>
+          <div className={css.filterItem}>
         <CustomSelect
            options={gender}
            value={searchParams.get("sex") ?? ""}
@@ -71,7 +72,8 @@ export default function PetsFilters() {
            onChange={(value) =>
             handleFilterChange("sex", value)
            }
-        />
+        /></div>
+         <div className={css.filterItem}>
         <CustomSelect
            options={type}
            value={searchParams.get("species") ?? ""}
@@ -80,6 +82,7 @@ export default function PetsFilters() {
               handleFilterChange("species", value)
                }
             />
+            </div>
         <div className={css.locationWrapper}>
              <LocationSearch />
         </div>

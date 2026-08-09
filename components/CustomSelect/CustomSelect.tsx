@@ -17,7 +17,7 @@ export default function CustomSelect({
   placeholder,
   onChange,
 }: Props) {
-    
+
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const handleSelect = (option: string) => {
@@ -42,32 +42,42 @@ export default function CustomSelect({
 
   return (
     <div className={css.wrapper} ref={wrapperRef}>
-      <button
-        type="button"
-        className={css.select}
-        onClick={() => setIsOpen((prev) => !prev)}
-      >
-        <span>{value || placeholder}</span>
+    <button
+      type="button"
+      className={css.select}
+      onClick={() => setIsOpen((prev) => !prev)}
+    >
+      <span>{value || placeholder}</span>
 
-        <IoChevronDown
-          className={`${css.arrow} ${isOpen ? css.arrowOpen : ""}`}
-        />
-      </button>
+      <IoChevronDown
+        className={`${css.arrow} ${isOpen ? css.arrowOpen : ""}`}
+      />
+    </button>
 
-      {isOpen && (
-        <div className={css.dropdown}>
-          {options.map((option) => (
-            <button
-              type="button"
-              key={option}
-              className={css.option}
-              onClick={() => handleSelect(option)}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+    {isOpen && (
+      <div className={css.dropdown}>
+        {value && (
+          <button
+            type="button"
+            className={css.option}
+            onClick={() => handleSelect("")}
+          >
+            ✕ Clear
+          </button>
+        )}
+
+        {options.map((option) => (
+          <button
+            type="button"
+            key={option}
+            className={css.option}
+            onClick={() => handleSelect(option)}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+    )}
+  </div>
+);
 }
