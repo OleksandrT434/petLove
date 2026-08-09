@@ -3,6 +3,7 @@ import { IoClose } from "react-icons/io5";
 import Navigation from "@/components/Navigation/Navigation";
 import AuthActions from "@/components/AuthActions/AuthActions";
 
+
 type Props = {
     isMenuOpen?: boolean;
     onClose: () => void;

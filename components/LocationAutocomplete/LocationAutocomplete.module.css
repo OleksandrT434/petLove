@@ -31,8 +31,6 @@
     border: none;
     border-radius: 30px;
     outline: none;
-  
-
 }
 input:focus {
     box-shadow: 0 0 0 2px #f6b83d;

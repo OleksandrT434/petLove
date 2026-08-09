@@ -10,6 +10,22 @@
   background: #fff4df;
   margin: 40px 0;
 }
+.search,
+.input {
+  box-sizing: border-box;
+  width: 295px;
+  max-width: 100%;
+  height: 42px;
+  padding: 12px 40px 12px 12px;
+  border: none;
+  border-radius: 30px;
+}
+
+.typeWrapper,
+.locationWrapper {
+  flex: 0 0 295px;
+  width: 295px;
+}
 
 .row {
   display: flex;
@@ -21,16 +37,22 @@
 }
 
 .searchWrapper,
-.filterItem,
 .locationWrapper {
+  flex: 0 0 100%;
+  width: 100%;
   min-width: 0;
-  box-sizing: border-box;
 }
 
-.filterItem,
-.locationWrapper {
-  flex: 0 0 calc((100% - 16px) / 2);
+.filterItem {
+  flex: 0 0 143px;
+  width: 143px;
+  height: 42px;
   min-width: 0;
+}
+
+
+.typeWrapper > * {
+  width: 100%;
 }
 
 .actions {
@@ -62,7 +84,6 @@
   border-radius: 30px;
   background: white;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   gap: 8px;
@@ -75,6 +96,34 @@
 
 .sortButton span {
   font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .searchWrapper {
+    flex: 0 0 265px;
+    width: 265px;
+  }
+  .typeWrapper {
+    flex: 0 0 170px;
+    width: 170px;
+  }
+
+  .searchWrapper,
+  .locationWrapper {
+    flex: 0 0 265px;
+    width: 265px;
+  }
+
+  .filterItem {
+    flex: 0 0 170px;
+    width: 170px;
+  }
+
+  .search,
+  .input {
+    width: 100%;
+    height: 48px;
+  }
 }
 
 

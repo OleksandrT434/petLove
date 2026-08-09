@@ -86,7 +86,7 @@ export default function PetsFilters() {
            }
         /></div>
          <div className={css.filterItem}>
-        <CustomSelect
+         <CustomSelect
            options={type}
            value={searchParams.get("species") ?? ""}
            placeholder="By type"
