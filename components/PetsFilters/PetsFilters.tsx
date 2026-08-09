@@ -48,10 +48,22 @@ export default function PetsFilters() {
     params.set("page", "1");
     router.push(`${pathname}?${params.toString()}`)
     }
+  const handleSortChange = (key: string, value: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (params.get(key ) === value) {
+      params.delete(key);
+    } else {
+      params.set(key, value);
+    }
+    params.set("page", "1");
+    router.push(`${pathname}?${params.toString()}`);
+  }
+
 
   return (
     <section className={css.filters}>
       <div className={css.row}>
+                
           <div className={css.searchWrapper}>
               <SearchInput basePath="/find-pet" />
            </div>
@@ -86,7 +98,52 @@ export default function PetsFilters() {
         <div className={css.locationWrapper}>
              <LocationSearch />
         </div>
-       </div>
+      </div>
+           <div className={css.sorting}>
+             <button
+               type="button"
+               className={`${css.sortButton} ${
+                 searchParams.get("byPopularity") === "true" ? css.active : ""
+               }`}
+               onClick={() => handleSortChange("byPopularity", "true")}
+             >
+               Popular
+               {searchParams.get("byPopularity") === "true" && <span>✕</span>}
+             </button>
+           
+             <button
+               type="button"
+               className={`${css.sortButton} ${
+                 searchParams.get("byPopularity") === "false" ? css.active : ""
+               }`}
+               onClick={() => handleSortChange("byPopularity", "false")}
+             >
+               Unpopular
+               {searchParams.get("byPopularity") === "false" && <span>✕</span>}
+             </button>
+           
+             <button
+               type="button"
+               className={`${css.sortButton} ${
+                 searchParams.get("byPrice") === "true" ? css.active : ""
+               }`}
+               onClick={() => handleSortChange("byPrice", "true")}
+             >
+               Cheap
+               {searchParams.get("byPrice") === "true" && <span>✕</span>}
+             </button>
+           
+             <button
+               type="button"
+               className={`${css.sortButton} ${
+                 searchParams.get("byPrice") === "false" ? css.active : ""
+               }`}
+               onClick={() => handleSortChange("byPrice", "false")}
+             >
+               Expensive
+               {searchParams.get("byPrice") === "false" && <span>✕</span>}
+             </button>
+           </div> 
     </section>
   );
 }

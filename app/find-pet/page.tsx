@@ -13,6 +13,9 @@ type Props = {
         sex?: string;
         species?: string;
         locationId?: string;
+        byPopularity?: boolean;
+        byPrice?: boolean;
+
     }>
 }
 
@@ -25,6 +28,8 @@ export default async function FindPetPage({searchParams}: Props) {
   const sex = params.sex ?? "";
   const species = params.species ?? "";
   const locationId = params.locationId ?? "";
+  const byPopularity = params.byPopularity;
+  const byPrice = params.byPrice;
  
 const pets = await PetsApi.getPets({
     page,
@@ -34,6 +39,8 @@ const pets = await PetsApi.getPets({
     sex,
     species,
     locationId,
+    byPopularity,
+    byPrice,
   
 });
 

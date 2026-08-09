@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   padding: 24px;
   border-radius: 30px;
@@ -14,11 +15,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-.searchWrapper {
-  flex: 0 0 100%;
+.searchWrapper,
+.filterItem,
+.locationWrapper {
   min-width: 0;
+  box-sizing: border-box;
 }
 
 .filterItem,
@@ -41,10 +47,43 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 1200px) {
+.sorting {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid rgba(38, 38, 38, 0.1);
+  padding-top: 20px;
+}
+
+.sortButton {
+  height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortButton.active {
+  background: #fcb53f;
+  color: white;
+}
+
+.sortButton span {
+  font-size: 14px;
+}
+
+
+
+@media screen and (min-width: 1280px) {
   .searchWrapper,
   .filterItem,
   .locationWrapper {
     flex: 0 0 calc((100% - 64px) / 5);
+    max-width: calc((100% - 64px) / 5);
   }
 }
