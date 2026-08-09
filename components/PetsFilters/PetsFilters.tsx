@@ -6,6 +6,7 @@ import {PetsApi} from "@/lib/api/clientApi"
 import { useState, useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import LocationSearch from "../LocationAutocomplete/LocationAutocomplete";
+import CustomSelect from "../CustomSelect/CustomSelect";
 
 
 export default function PetsFilters() {
@@ -50,49 +51,38 @@ export default function PetsFilters() {
 
   return (
     <section className={css.filters}>
-      <SearchInput basePath="/find-pet" />
-
       <div className={css.row}>
-          <select
-              className={css.select}
-              onChange={(e) =>
-               handleFilterChange("category", e.target.value)}>
-               <option value="">Category</option>
-               {categories.map((category) => (
-              <option
-                  key={category}
-                  value={category}>
-                  {category}
-              </option>
-             ))}
-           </select>
+          <div className={css.searchWrapper}>
+              <SearchInput basePath="/find-pet" />
+           </div>
+          <CustomSelect
+                 options={categories}
+                 value={searchParams.get("category") ?? ""}
+                 placeholder="Category"
+                 onChange={(value) =>
+                  handleFilterChange("category", value)
+                }
+            />
 
-        <select className={css.select}
-           onChange={(e) =>
-            handleFilterChange("sex", e.target.value)
-                }>
-          <option value="">By gender</option>
-          {gender.map(gender => (
-               <option 
-                key={gender}
-                value={gender}>
-                  {gender}
-                </option>    
-          ))}
-        </select>
-        <select className={css.select}
-                onChange={(e) =>
-                  handleFilterChange("species", e.target.value)}>
-                   <option value="">By type</option>
-           {type.map(species => (
-               <option 
-                key={species}
-                value={species}>
-                  {species}
-                </option>    
-          ))}
-        </select>
-        <LocationSearch />
+        <CustomSelect
+           options={gender}
+           value={searchParams.get("sex") ?? ""}
+           placeholder="Gender"
+           onChange={(value) =>
+            handleFilterChange("sex", value)
+           }
+        />
+        <CustomSelect
+           options={type}
+           value={searchParams.get("species") ?? ""}
+           placeholder="By type"
+            onChange={(value) =>
+              handleFilterChange("species", value)
+               }
+            />
+        <div className={css.locationWrapper}>
+             <LocationSearch />
+        </div>
        </div>
     </section>
   );
