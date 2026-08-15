@@ -11,13 +11,15 @@ export default function SignInPage() {
             <Header variant="default" />
             <div className={css.signInPage}>
               <div className={css.imageContainer}>
-                 <Image className={css.image} src="/sing-inMobi.jpg" alt="Sign In" width={335} height={280} />
+                 <Image className={css.image} src="/sign-inMob.png" alt="Sign In" width={335} height={280} />
                </div>
                <form className={css.form} action="/api/sign-in" method="POST">
                  <h1 className={css.title}>Log in</h1>
                    <p className={css.description}>Welcome! Please enter your credentials to login to the platform:</p>
+                <div className={css.inputContainer}>
                 <input className={css.input} type="email" placeholder="Email" required />
                 <input className={css.input} type="password" placeholder="Password" required />
+                </div>
                 <button className={css.loginButton} type="submit">LOG IN</button>
                 <p className={css.registerLink}>Don’t have an account? <Link className={css.span} href="/sign-up">Register</Link></p>
             </form>
