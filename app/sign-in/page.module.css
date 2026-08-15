@@ -1,5 +1,9 @@
 .container{
     background: #f9f9f9;
+    min-height: 100vh;
+}
+.authHeroContainer{
+    display: none;
 }
 
 .signInPage{
@@ -7,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 .imageContainer {
     position: relative;
@@ -15,6 +20,16 @@
     background-color: #f6b83d;
     border-radius: 30px;
     overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 530px;
+    height: 249px;
+    z-index: 0;
 }
 
 .image {
@@ -87,10 +102,104 @@
     height: 422px;
     background-color: #fff;
     padding: 12px;
+    box-sizing: border-box
 }
 .inputContainer{
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .authHeroContainer {
+    display: block;
+  }
+  .shape{
+    height: 100%;
+  }
+
+  .imageContainer {
+    width: 704px;
+    height: 302px;
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 364px;
+    height: 302px;
+    
+  }
+
+  .form{
+    width: 704px;
+    height: 560px;
+  }
+  .title{   
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  .description{
+    font-size: 18px;
+    line-height: 122%;
+    margin-bottom: 32px;
+  }
+  .input{
+    width: 424px;
+    height: 52px;
+  }
+  .loginButton{
+    width: 424px;
+    height: 52px;
+    margin-bottom: 16px;
+  }
+  .registerLink{
+    font-size: 14px;
+    line-height: 143%;
+  }
+  .form{
+    box-sizing: border-box;
+    padding: 71px 140px 71px 140px;
+  }
+  .inputContainer{
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  .imageContainer{
+    margin-bottom: 16px;
+  }
+
+}
+@media screen and (min-width: 1280px) {
+    .signInPage {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 5px;
+      }
+
+    .imageContainer,
+    .form {
+        flex: 0 0 592px;
+        width: 592px;
+        height: 654px;
+        box-sizing: border-box;
+        padding: 84px
+    }
+    .image {
+        width: 512px;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom center;
+        
+  }
 }

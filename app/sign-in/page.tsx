@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header/Header";
 import css from "./page.module.css";
+import AuthHero from "@/components/AuthHero/AuthHero";
 
 export default function SignInPage() {
     return (
@@ -11,7 +12,17 @@ export default function SignInPage() {
             <Header variant="default" />
             <div className={css.signInPage}>
               <div className={css.imageContainer}>
+                 <Image
+                       src="/shape.svg"
+                       alt=""
+                       width={530}
+                       height={249}
+                       className={css.shape}
+                      />
                  <Image className={css.image} src="/sign-inMob.png" alt="Sign In" width={335} height={280} />
+                        <div className={css.authHeroContainer}>
+                           <AuthHero animal="🐶" name="Rich" birthday="21.09.2020" description="Rich would be the perfect addition to an active family that loves to play and go on walks. I bet he would love having a doggy playmate too!"  />
+                        </div>            
                </div>
                <form className={css.form} action="/api/sign-in" method="POST">
                  <h1 className={css.title}>Log in</h1>
