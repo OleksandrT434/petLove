@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { IoHeart } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import { useAuth } from "@/components/AuthContext/AuthContext";
 
@@ -36,15 +36,15 @@ export default function Header({ variant = "home" }: HeaderProps) {
       <div className={css.headerRight}>
         <div className={css.authActions}>
          {user ? (
-              <button type="button" className={css.logoutButton} onClick={logout} >
-                LOG OUT
-               </button>
-                ) : (
+              <button type="button" className={css.logoutButton} onClick={logout} > LOG OUT </button> ) : (
               <AuthActions />
                )}
           </div>
 
-        <FaUserCircle className={css.userIcon} />
+        {user && (
+            <Link href="/account" className={css.userLink}>
+                 <FaUser  className={css.userIcon} />
+             </Link>)}
 
         <button
           type="button"

@@ -57,8 +57,20 @@
 } 
 
 .userIcon {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  color: #f6b83d;
+  
+}
+.userLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  border-radius: 50%;
 }
 
 .menuButton {
@@ -75,9 +87,7 @@
 .default .menuIcon {
   color: #262626;
 }
-.default .userIcon {
-    display: none   ;
-}
+
 .logoutButton{
    border-radius: 30px;
    padding: 15px 35px;
@@ -88,10 +98,15 @@
    border: none;
 }
 
+.userLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 @media screen and (min-width: 768px) {
-  .userIcon {
-    display: block;
-  }
+
   .authActions {
     display: flex;
     gap: 8px;
