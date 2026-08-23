@@ -1,6 +1,8 @@
 import "./globals.css";
 import SplashGate from "./SplashGate";
 import type { Viewport } from "next";
+import { AuthProvider } from "@/components/AuthContext/AuthContext";
+
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -15,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <AuthProvider>
         <SplashGate>{children}</SplashGate>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -138,6 +138,8 @@
   .form{
     width: 704px;
     height: 560px;
+    box-sizing: border-box;
+    padding: 71px 140px 71px 140px;
   }
   .title{   
     font-weight: 700;
@@ -165,10 +167,7 @@
     font-size: 14px;
     line-height: 143%;
   }
-  .form{
-    box-sizing: border-box;
-    padding: 71px 140px 71px 140px;
-  }
+
   .inputContainer{
     gap: 16px;
     margin-bottom: 64px;

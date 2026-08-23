@@ -18,6 +18,18 @@
     overflow: hidden;
 }
 
+.shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 530px;
+    height: 249px;
+    z-index: 0;
+}
+.authHeroContainer{
+    display: none;
+}
+
 .image {
     position: relative;
     z-index: 1;
@@ -25,7 +37,6 @@
     height: 100%;
     object-fit: contain;
 }
-
 
 .title{
     font-weight: 700;
@@ -49,9 +60,34 @@
     height: 42px;
     outline: none;
 }
+.inputError {
+    border-color: #f44336;
+}
+.error {
+    color: #f44336;
+    font-size: 12px;
+    line-height: 117%;
+    margin: 0;
+}
+.field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.field .input {
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.inputError {
+    border: 1px solid #f44336;
+}
+.passwordWrapper {
+    position: relative;
+}
 .registerButton{
     border-radius: 30px;
-    padding: 12px 126px;
     width: 295px;
     height: 42px;
     background: #f6b83d;
@@ -69,12 +105,15 @@
     line-height: 117%;  
     letter-spacing: -0.03em;
     color: rgba(38, 38, 38, 0.5);
+    display: flex;
+    justify-content: center;
 }
 .span{
     font-weight: 700;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #f6b83d;
+    padding-left: 5px;
 }
 .form{
     display: flex;
@@ -85,4 +124,141 @@
     width: 335px;
     height: 422px;
     background-color: #fff;
+    padding: 20px 27px;
+}
+
+.passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 295px;
+}
+
+.passwordWrapper .input {
+    width: 100%;
+    padding-right: 40px;
+    box-sizing: border-box; 
+}
+
+.toggleButton {
+    position: absolute;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #f6b83d;
+    padding: 0;
+    font-size: 20px;
+}
+
+.toggleButton:hover {
+    color: #333;
+}
+
+@media screen and (min-width: 768px) {
+  .authHeroContainer {
+    display: block;
+  }
+  .shape{
+    height: 100%;
+  }
+
+  .imageContainer {
+    width: 704px;
+    height: 302px;
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 364px;
+    height: 302px;
+    
+  }
+
+  .form{
+    box-sizing: border-box;
+    width: 704px;
+    height: 560px;
+    padding: 30px 140px;
+  }
+  .title{   
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  .description{
+    font-size: 18px;
+    line-height: 122%;
+    margin-bottom: 32px;
+  }
+  .passwordWrapper {
+    width: 424px;;
+}
+  .input{
+    width: 424px;
+    height: 52px;
+  }
+  .loginButton{
+    width: 424px;
+    height: 52px;
+    margin-bottom: 16px;
+  }
+  .registerLink{
+    font-size: 14px;
+    line-height: 143%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .inputContainer{
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  .imageContainer{
+    margin-bottom: 16px;
+  }
+  .registerButton{
+    border-radius: 30px;
+    padding: 16px 157px;
+    width: 424px;
+    height: 52px;
+  }
+
+}
+@media screen and (min-width: 1280px) {
+    .signUpPage {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 5px;
+      }
+
+    .imageContainer,
+    .form {
+        flex: 0 0 592px;
+        width: 592px;
+        height: 654px;
+        box-sizing: border-box;
+        padding: 84px;
+        display: flex;
+        justify-content: center;        
+    }
+    .image {
+        width: 512px;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom center;
+        
+  }
 }

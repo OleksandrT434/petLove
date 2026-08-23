@@ -5,6 +5,7 @@ import { IoHeart } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
+import { useAuth } from "@/components/AuthContext/AuthContext";
 
 import BurgerMenu from "@/components/BurgerMenu/burgerMenu";
 import Navigation from "@/components/Navigation/Navigation";
@@ -20,6 +21,7 @@ type HeaderProps = {
 export default function Header({ variant = "home" }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const { user, logout } = useAuth();
   return (
        <header
           className={`${css.header} ${ variant === "home" ? css.home : css.default}`}>
@@ -32,12 +34,15 @@ export default function Header({ variant = "home" }: HeaderProps) {
        </div>
 
       <div className={css.headerRight}>
-        <div
-          className={`${css.authActions} ${
-          variant === "home" ? css.homeAuth : ""}`}
-        >
-        <AuthActions />
-      </div>
+        <div className={css.authActions}>
+         {user ? (
+              <button type="button" className={css.logoutButton} onClick={logout} >
+                LOG OUT
+               </button>
+                ) : (
+              <AuthActions />
+               )}
+          </div>
 
         <FaUserCircle className={css.userIcon} />
 
