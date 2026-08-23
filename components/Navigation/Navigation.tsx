@@ -24,7 +24,7 @@ export default function Navigation({
         href="/news"
         className={`${css.menuButton} ${
           pathname === "/news" ? css.active : ""
-        } ${variant === "home" ? css.homeButton : ""}`}
+        } ${variant === "home" ? css.homeButton : css.defaultButton}`}
       >
         News
       </Link>
@@ -33,7 +33,7 @@ export default function Navigation({
         href="/find-pet"
         className={`${css.menuButton} ${
           pathname === "/find-pet" ? css.active : ""
-        } ${variant === "home" ? css.homeButton : ""}`}
+        } ${variant === "home" ? css.homeButton : css.defaultButton}`}
       >
         Find pet
       </Link>
@@ -42,7 +42,7 @@ export default function Navigation({
         href="/our-friends"
         className={`${css.menuButton} ${
           pathname === "/our-friends" ? css.active : ""
-        } ${variant === "home" ? css.homeButton : ""}`}
+        } ${variant === "home" ? css.homeButton : css.defaultButton}`}
       >
         Our friends
       </Link>

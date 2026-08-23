@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={css.pageWrapper}>
       <section className={css.hero}>
-        <Header />
+        <Header variant="home"/>
         <div className={css.textBlock}>
           <h1 className={css.bannerTitle}>
             Take good <span className={css.accent}>care</span> of your small pets

@@ -28,8 +28,8 @@ export default function Header({ variant = "home" }: HeaderProps) {
       </Link>
 
       <div className={css.headerNav}>
-        <Navigation />
-      </div>
+           <Navigation variant={variant} />
+       </div>
 
       <div className={css.headerRight}>
         <div

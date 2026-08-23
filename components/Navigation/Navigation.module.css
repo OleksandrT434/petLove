@@ -26,7 +26,13 @@
 .homeButton {
   background-color: #f6b83d;
   color: #fff;
-  border-color: #f6b83d;
+  border-color: #f9f9f9;
+}
+
+.defaultButton {
+  background-color: #f9f9f9;
+  color: #000000;
+  border-color: #e2e2e2;
 }
 
 

@@ -193,7 +193,9 @@
         width: 592px;
         height: 654px;
         box-sizing: border-box;
-        padding: 84px
+        padding: 84px;
+        display: flex;
+        justify-content: center;        
     }
     .image {
         width: 512px;
