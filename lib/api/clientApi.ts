@@ -10,6 +10,7 @@ import {
   type AuthResponse,
   type CurrentUser} 
 from "@/types/auth"
+import { type CurrentUserFull, type EditUserData } from "@/types/auth"; 
 
 export const NewsApi = {
     getNews: async (keyword: string, page = 1, limit = 6) => {
@@ -97,11 +98,20 @@ export const AuthApi = {
     return response.data;
   },
 
-  async getCurrentFull() {
-    const response = await privateApi.get(
-      "/users/current/full"
-    );
+   async getCurrentFull() {
+    const response = await privateApi.get<CurrentUserFull>(
+       "/users/current/full"
+      );
 
+  return response.data;
+},
+
+  async editUser(data: EditUserData) {
+    const response = await privateApi.patch<CurrentUserFull>(
+      "/users/current/edit",
+      data
+    );
+ 
     return response.data;
   },
 

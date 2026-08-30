@@ -1,0 +1,483 @@
+
+
+.profileLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.profileCard {
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.userBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background-color: #f6b83d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.userBadgeIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.penButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff4df;
+  cursor: pointer;
+}
+
+.iconPen {
+  width: 18px;
+  height: 18px;
+  color: #f6b83d;
+}
+
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.avatarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background-color: #fff4df;
+  overflow: hidden;
+}
+
+.userIcon {
+  width: 40px;
+  height: 40px;
+  color: #f6b83d;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uploadText {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #262626;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.infoSection {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #262626;
+}
+
+.infoFields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoInput {
+  width: 100%;
+  height: 42px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  border-radius: 30px;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #262626;
+}
+
+.infoInput:focus {
+  outline: none;
+  border-color: #f6b83d;
+}
+
+.petsSection {
+  margin-bottom: 32px;
+}
+
+.petsSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.petsSectionHeader .sectionTitle {
+  margin: 0;
+}
+
+.addPetButton {
+  border: none;
+  border-radius: 30px;
+  padding: 10px 16px;
+  background-color: #f6b83d;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.petsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.petCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #eeeeee;
+  border-radius: 14px;
+}
+
+.petImage {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ffe1a4;
+}
+
+.petName {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #262626;
+}
+
+.petMeta {
+  margin: 0;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+.logoutButton {
+  width: 114px;
+  height: 42px;
+  padding: 0;
+  border: none;
+  border-radius: 30px;
+  background-color: #fff4df;
+  color: #f6b83d;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+}
+
+.contentSection {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.tabButton {
+  min-width: 120px;
+  height: 42px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #262626;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tabButtonActive {
+  background-color: #f6b83d;
+  color: #ffffff;
+}
+
+.favoriteList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.favoriteCard {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+
+.favoriteImage {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.favoriteBody {
+  padding: 12px;
+}
+
+.favoriteTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.favoriteTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #262626;
+}
+
+.favoriteRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+.starIcon {
+  width: 12px;
+  height: 12px;
+  color: #f6b83d;
+}
+
+.favoriteDescription {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #8a8a8a;
+}
+
+.favoriteFooter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.favoritePrice {
+  margin-right: auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: #262626;
+}
+
+.learnMoreButton {
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  background-color: #f6b83d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  color: #8a8a8a;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.emptyState {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #262626;
+  text-align: center;
+}
+
+.emptyStateLink {
+  color: #f6b83d;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 32px 50px;
+  }
+
+  .profileCard {
+    padding: 32px;
+    border-radius: 30px;
+  }
+
+  .avatarWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .infoFields {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .infoInput {
+    width: calc(50% - 5px);
+  }
+
+  .petsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .petCard {
+    width: calc(50% - 5px);
+  }
+
+  .logoutButton {
+    width: 114px;
+  }
+
+  .favoriteCard {
+    width: calc(50% - 7px);
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 0 32px 60px;
+  }
+
+  .profileLayout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .profileCard {
+    width: 414px;
+    flex-shrink: 0;
+    padding: 32px;
+    box-sizing: border-box;
+    border-radius: 30px;
+  }
+
+  .contentSection {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .avatarWrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .userIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .infoFields {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .infoInput {
+    width: calc(50% - 5px);
+  }
+
+  .infoInput:last-child {
+    width: calc(50% - 5px);
+  }
+
+  .petsList {
+    flex-direction: column;
+  }
+
+  .petCard {
+    width: 100%;
+  }
+
+  .tabs {
+    margin-bottom: 40px;
+  }
+  .favoriteList {
+    gap: 16px;
+  }
+
+  .favoriteCard {
+    width: calc(33.333% - 11px);
+  }
+
+  .favoriteImage {
+    height: 180px;
+  }
+  .emptyState {
+    margin-top: 120px;
+  }
+
+}

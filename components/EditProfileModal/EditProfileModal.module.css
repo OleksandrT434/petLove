@@ -1,0 +1,141 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: 100%;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: #262626;
+  margin-bottom: 24px;
+}
+
+.avatarWrapper {
+  width: 94px;
+  height: 94px;
+  background-color: #fff4df;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  margin-bottom: 24px;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userIcon {
+  color: #f6b83d;
+  width: 40px;
+  height: 40px;
+}
+
+.avatarInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input {
+  box-sizing: border-box;
+
+  border: 1px solid #f6b83d;
+  border-radius: 30px;
+
+  padding: 12px;
+
+  width: 100%;
+  height: 52px;
+
+  outline: none;
+
+  font-size: 16px;
+  color: #262626;
+}
+
+.avatarInputContainer .input {
+  flex: 1;
+}
+
+.uploadButton {
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 30px;
+
+  width: 180px;
+  height: 52px;
+
+  background: #fff4df;
+  color: #262626;
+
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.uploadButton svg {
+  width: 24px;
+  height: 24px;
+  color: #f6b83d;
+}
+
+.inputCont {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin-bottom: 24px;
+}
+
+.saveButton {
+  border-radius: 30px;
+
+  width: 100%;
+  height: 52px;
+
+  border: none;
+
+  background: #f6b83d;
+  color: #fff;
+
+  font-weight: 700;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.fileInput {
+  display: none;
+}
