@@ -1,0 +1,32 @@
+.container{
+    background: #f9f9f9;
+    min-height: 100vh;
+}
+
+.imageContainer{
+    position: relative;
+    width: 335px;
+    height: 280px;
+    background-color: #f6b83d;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.title{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #262626;
+}
+.partTitle{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 129%;
+    color: rgba(43, 43, 42, 0.4);
+}
+.titleContainer{
+    border-radius: 30px;
+    width: 335px;
+    height: 489px;
+}

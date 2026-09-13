@@ -20,8 +20,7 @@ export default function Profile() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
 
-  const [isEditModalOpen, setIsEditModalOpen] =
-  useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -153,6 +152,7 @@ export default function Profile() {
             <button
               type="button"
               className={css.addPetButton}
+
             >
               Add pet +
             </button>
