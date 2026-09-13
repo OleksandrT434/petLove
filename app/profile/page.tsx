@@ -159,7 +159,7 @@ export default function Profile() {
           </div>
 
           {user.pets.length === 0 ? (
-            <p className={css.emptyState}>
+            <p className={css.emptyState1}>
               You haven&apos;t added any pets yet.
             </p>
           ) : (
@@ -224,7 +224,6 @@ export default function Profile() {
             Viewed
           </button>
         </div>
-
 
         {noticesToShow.length === 0 ? (
           <p className={css.emptyState}>

@@ -1,4 +1,7 @@
-
+.container{
+  background: #f9f9f9;
+  min-height: 100vh;
+}
 
 .profileLayout {
   display: flex;
@@ -213,8 +216,10 @@
 }
 
 .contentSection {
-  width: 100%;
   box-sizing: border-box;
+  margin-top: 29px;
+  padding: 20px;
+
 }
 
 .tabs {
@@ -346,12 +351,14 @@
 }
 
 .emptyState {
-  max-width: 450px;
-  margin: 0 auto;
-  padding: 20px 0;
-  font-size: 13px;
-  line-height: 1.4;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.02em;
+  text-align: center;
   color: #262626;
+}
+.emptyState1{
   text-align: center;
 }
 
@@ -427,6 +434,7 @@
   .contentSection {
     flex: 1;
     min-width: 0;
+    width: 458px;
   }
 
   .avatarWrapper {
@@ -477,7 +485,7 @@
     height: 180px;
   }
   .emptyState {
-    margin-top: 120px;
+    margin: 0 auto;
+    margin-top: 100px;
   }
-
 }
