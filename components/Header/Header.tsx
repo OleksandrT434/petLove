@@ -10,6 +10,7 @@ import { useAuth } from "@/components/AuthContext/AuthContext";
 import BurgerMenu from "@/components/BurgerMenu/burgerMenu";
 import Navigation from "@/components/Navigation/Navigation";
 import AuthActions from "@/components/AuthActions/AuthActions";
+import Image from "next/image";
 
 import css from "./Header.module.css";
 
@@ -43,9 +44,15 @@ export default function Header({ variant = "home" }: HeaderProps) {
           </div>
           
           {user && (
-            <Link href="/profile" className={css.userLink}>
-                 <FaUserAlt  className={css.userIcon} />
-             </Link>)}
+           <Link href="/profile" className={css.userLink}>
+               {user.avatar ? (
+                  <img
+                    src={user.avatar}
+                    alt={user.name}
+                     className={css.userAvatar}/>
+                    ) : (
+                    <FaUserAlt className={css.userIcon} />)}
+            </Link>)}
             
         <button
           type="button"

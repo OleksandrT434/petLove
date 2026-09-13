@@ -7,11 +7,14 @@ import AuthHero from "@/components/AuthHero/AuthHero";
 import { useState } from "react"; 
 import { useAuth } from "@/components/AuthContext/AuthContext"
 import { AuthApi } from "@/lib/api/clientApi";
+import { useRouter } from "next/navigation";
 
 
 export default function SignInPage() {
 
   const { login } = useAuth();
+  const router = useRouter();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,8 +28,9 @@ export default function SignInPage() {
             password,
         });
         localStorage.setItem("token", data.token);
-        const currentUser = await AuthApi.getCurrent();
+        const currentUser = await AuthApi.getCurrentFull();
         login(currentUser);
+        router.push("/profile");
     } catch (requestError) {
         console.error("SIGN IN ERROR:", requestError);
         setError("Invalid email or password");

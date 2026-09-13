@@ -1,63 +1,78 @@
 "use client";
 
-import { createContext,useContext, useState, useEffect} from "react";
-import type { CurrentUser } from "@/types/auth";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
+
+import type { CurrentUserFull } from "@/types/auth";
 import { AuthApi } from "@/lib/api/clientApi";
 
-
 type AuthContextType = {
-    user: CurrentUser | null;
-    login: (user: CurrentUser) => void;
-    logout: () => Promise<void>;
+  user: CurrentUserFull | null;
+  login: (user: CurrentUserFull) => void;
+  logout: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
+export function AuthProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [user, setUser] = useState<CurrentUserFull | null>(null);
 
-export function AuthProvider({ children,}: {children: React.ReactNode;}) {
-
-    const [user, setUser] = useState<CurrentUser | null>(null);
-    const logout = async () => {
+  const logout = async () => {
     try {
-        await AuthApi.signOut();
+      await AuthApi.signOut();
     } catch (error) {
-        console.error("LOGOUT ERROR:", error);
+      console.error("LOGOUT ERROR:", error);
     } finally {
-        localStorage.removeItem("token");
-        setUser(null);
+      localStorage.removeItem("token");
+      setUser(null);
     }
-};
-const login = (currentUser: CurrentUser) => {
+  };
+
+  const login = (currentUser: CurrentUserFull) => {
     setUser(currentUser);
-};
+  };
 
-useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem("token");
-    if (!token) {
-        return;}
-    const checkAuth = async () => {
-        try {
-            const currentUser = await AuthApi.getCurrent();
-            setUser(currentUser);
-        } catch (error) {
-            console.error("AUTH ERROR:", error);
-            localStorage.removeItem("token");
-        }
-    };
-    checkAuth();
-}, []);
 
-    return (
-        <AuthContext.Provider value={{ user, login, logout }}>
-            {children}
-        </AuthContext.Provider>
-    );
+    if (!token) {
+      return;
+    }
+
+    const checkAuth = async () => {
+      try {
+        const currentUser = await AuthApi.getCurrentFull();
+        setUser(currentUser);
+      } catch (error) {
+        console.error("AUTH ERROR:", error);
+        localStorage.removeItem("token");
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export function useAuth() {
-    const context = useContext(AuthContext);
-    if (!context) {
-        throw new Error("useAuth must be used inside AuthProvider");
-    }
-    return context;
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw new Error("useAuth must be used inside AuthProvider");
+  }
+
+  return context;
 }

@@ -99,12 +99,20 @@ export default function Profile() {
 
         <div className={css.avatarSection}>
           <div className={css.avatarWrapper}>
-            <FaUserAlt className={css.userIcon} />
-          </div>
+             {user.avatar ? (
+             <img
+             src={user.avatar}
+              alt={user.name}
+             className={css.avatarImage}
+            />
+                 ) : (
+               <FaUserAlt className={css.userIcon} />
+              )}
+            </div>
 
-          <p className={css.uploadText}>
-            Upload photo
-          </p>
+           <p className={css.uploadText}>
+              Upload photo
+           </p>
         </div>
 
         <section className={css.infoSection}>
@@ -223,7 +231,7 @@ export default function Profile() {
             Oops, looks like there aren&apos;t any furries on this page yet.
             Do not worry! View your pets on the{" "}
             <a
-              href="/pets"
+              href="/find-pet"
               className={css.emptyStateLink}
             >
               find your favorite pet
