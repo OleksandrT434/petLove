@@ -8,7 +8,8 @@ import {
   type SignUpData,
   type SignInData,
   type AuthResponse,
-  type CurrentUser} 
+  type CurrentUser,
+   type AddPetData} 
 from "@/types/auth"
 import { type CurrentUserFull, type EditUserData } from "@/types/auth"; 
 
@@ -122,5 +123,14 @@ export const AuthApi = {
 
     return response.data;
   },
+
+async addPet(data: AddPetData) {
+  const response = await privateApi.post<CurrentUserFull>(
+    "/users/current/pets/add",
+    data
+  );
+
+  return response.data;
+}
 }
 

@@ -69,3 +69,12 @@ export type EditUserData = {
   phone?: string;
   avatar?: string;
 };
+
+export type AddPetData = {
+  name: string;
+  title: string;
+  imgURL: string;
+  species: string;
+  birthday: string;
+  sex: string;
+};
