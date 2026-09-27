@@ -3,7 +3,7 @@
 import { useEffect, useState,useRef } from "react";
 import Header from "@/components/Header/Header";
 import { PetsApi } from "@/lib/api/clientApi";
-
+import { FaPaw } from "react-icons/fa";
 import css from "./page.module.css";
 
 export default function AddPet() {
@@ -46,6 +46,21 @@ export default function AddPet() {
                setSelectedFile(file);
               setImagePreview(previewUrl);
            };
+
+      const uploadPetImage = async (file: File) => {
+           const formData = new FormData();
+           formData.append("file", file);
+           formData.append(
+              "upload_preset",
+              process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!);
+            const response = await fetch(
+            `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+          {
+             method: "POST",
+             body: formData, });
+           if (!response.ok) { throw new Error("Failed to upload pet image"); }
+           const data = await response.json();
+           return data.secure_url;};
            
   return (
   <section>
@@ -66,41 +81,42 @@ export default function AddPet() {
       </h1>
       <div className={css.sexContainer}>
         <button
-          type="button"
-          className={css.sexButton}
-          onClick={() => setSelectedSex("female")}
-        >
-          ♀
+            type="button"
+             className={`${css.sexButton} ${
+             selectedSex === "female" ? css.sexButtonActive : ""
+              }`}
+             onClick={() => setSelectedSex("female")}>
+             ♀
+        </button>
+
+         <button
+           type="button"
+            className={`${css.sexButton} ${
+            selectedSex === "male" ? css.sexButtonActive : ""
+            }`}
+             onClick={() => setSelectedSex("male")}>
+            ♂
         </button>
 
         <button
           type="button"
-          className={css.sexButton}
-          onClick={() => setSelectedSex("male")}
-        >
-          ♂
-        </button>
-
-        <button
-          type="button"
-          className={css.sexButton}
-          onClick={() => setSelectedSex("multiple")}
-        >
-          ♀♂
-        </button>
-      </div>
+         className={`${css.sexButton} ${
+         selectedSex === "multiple" ? css.sexButtonActive : ""
+          }`}
+          onClick={() => setSelectedSex("multiple")}>
+        ♀♂
+       </button>
+    </div>
       <div className={css.photoContainer}>
         <div className={css.photoPreview}>
-          {imagePreview ? (
-            <img
+           {imagePreview ? (
+              <img
               src={imagePreview}
               alt="Pet preview"
-              className={css.previewImage}
-            />
-          ) : (
-            <span className={css.pawIcon}>♧</span>
-          )}
-        </div>
+              className={css.previewImage}  />
+             ) : (
+            <FaPaw className={css.pawIcon} />)}
+         </div>
       </div>
       <div className={css.photoInputContainer}>
         <input
