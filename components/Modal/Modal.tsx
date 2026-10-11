@@ -8,9 +8,10 @@ import css from "./Modal.module.css";
 type ModalProps = {
   onClose: () => void;
   children: React.ReactNode;
+  className?: string;
 };
 
-export default function Modal({ onClose, children }: ModalProps) {
+export default function Modal({ onClose, children, className }: ModalProps) {
   useEffect(() => {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -30,7 +31,7 @@ export default function Modal({ onClose, children }: ModalProps) {
 
   return (
     <div className={css.backdrop} onClick={handleBackdropClick}>
-      <div className={css.modal}>
+      <div className={`${css.modal} ${className || ""}`}>
         <button
           type="button"
           className={css.closeButton}

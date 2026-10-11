@@ -117,10 +117,71 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favoriteActive {
+  background: #ffe9ef;
 }
 
 .heart {
   width: 18px;
   height: 18px;
   color: #f6b83d;
+}
+
+.heartFilled {
+  width: 18px;
+  height: 18px;
+  color: #f6b83d;
+}
+
+.authModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.authTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  color: #262626;
+}
+
+.authText {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  color: #8a8a8a;
+}
+
+.authModalActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.authPrimaryButton,
+.authSecondaryButton {
+  flex: 1;
+  height: 42px;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.authPrimaryButton {
+  background: #f6b83d;
+  color: #fff;
+}
+
+.authSecondaryButton {
+  background: #fff;
+  color: #262626;
+  border: 1px solid #e5e5e5;
 }

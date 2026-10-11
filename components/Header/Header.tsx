@@ -10,7 +10,6 @@ import { useAuth } from "@/components/AuthContext/AuthContext";
 import BurgerMenu from "@/components/BurgerMenu/burgerMenu";
 import Navigation from "@/components/Navigation/Navigation";
 import AuthActions from "@/components/AuthActions/AuthActions";
-import Image from "next/image";
 
 import css from "./Header.module.css";
 

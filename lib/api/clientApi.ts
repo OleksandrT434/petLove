@@ -1,4 +1,5 @@
 import { publicApi, privateApi } from "./api";
+import axios from "axios";
 import { NewsResponse } from "@/types/card";
 import{ Friend } from "@/types/friends";
 import { type PetResponse } from "@/types/pets";
@@ -14,18 +15,18 @@ from "@/types/auth"
 import { type CurrentUserFull, type EditUserData } from "@/types/auth"; 
 
 export const NewsApi = {
-    getNews: async (keyword: string, page = 1, limit = 6) => {
-        try {
-            const response = await publicApi.get<NewsResponse>("/news", {
-                params: { keyword, page, limit },
-            });
-            return response.data;
-        }
-        catch (error) {
-            console.error("Error fetching news cards:", error);
-            throw error;
-        }
+  getNews: async (keyword: string, page = 1, limit = 6) => {
+    try {
+      const response = await publicApi.get<NewsResponse>("/news", {
+        params: { keyword, page, limit },
+      });
+      return response.data;
     }
+    catch (error) {
+      console.error("Error fetching news cards:", error);
+      throw error;
+    }
+  }
 }
 
 export const FriendsApi = {
@@ -116,6 +117,47 @@ export const AuthApi = {
     return response.data;
   },
 
+  async addNoticeToFavorites(noticeId: string) {
+    const response = await privateApi.post<string[]>(
+      `/notices/favorites/add/${noticeId}`
+    );
+
+    return response.data;
+  },
+
+  async removeNoticeFromFavorites(noticeId: string) {
+    const response = await privateApi.delete<string[]>(
+      `/notices/favorites/remove/${noticeId}`
+    );
+
+    return response.data;
+  },
+
+  async removePet(petId: string) {
+    const candidates = [
+      `/users/current/pets/remove/${petId}`,
+      `/users/current/pets/delete/${petId}`,
+      `/users/current/pets/${petId}`,
+    ];
+
+    let lastError: unknown;
+
+    for (const url of candidates) {
+      try {
+        const response = await privateApi.delete(url);
+        return response.data;
+      } catch (error) {
+        lastError = error;
+
+        if (!axios.isAxiosError(error) || error.response?.status !== 404) {
+          throw error;
+        }
+      }
+    }
+
+    throw lastError ?? new Error("Failed to remove pet");
+  },
+
   async signOut() {
     const response = await privateApi.post(
       "/users/signout"
@@ -124,13 +166,13 @@ export const AuthApi = {
     return response.data;
   },
 
-async addPet(data: AddPetData) {
-  const response = await privateApi.post<CurrentUserFull>(
-    "/users/current/pets/add",
-    data
-  );
+  async addPet(data: AddPetData) {
+    const response = await privateApi.post<CurrentUserFull>(
+      "/users/current/pets/add",
+      data
+    );
 
-  return response.data;
-}
-}
+    return response.data;
+  }
+};
 

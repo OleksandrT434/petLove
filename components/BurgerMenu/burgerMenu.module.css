@@ -37,6 +37,38 @@
   margin-top: auto;
 }
 
+.userBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #262626;
+  text-align: center;
+}
+
+.logoutButton {
+  width: 119px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  background: #f6b83d;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .open {
   transform: translateX(0);
   transition: transform 0.3s ease;
@@ -59,6 +91,71 @@
 .burgerNav .menuButton {
   width: 100%;
   max-width: 220px;
+}
+
+.confirmContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.confirmIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffe1a4;
+  color: #f6b83d;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.confirmTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  color: #262626;
+}
+
+.confirmText {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  color: #8a8a8a;
+}
+
+.confirmActions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.confirmYesButton,
+.confirmCancelButton {
+  flex: 1;
+  height: 42px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.confirmYesButton {
+  border: none;
+  background: #f6b83d;
+  color: #fff;
+}
+
+.confirmCancelButton {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  color: #262626;
 }
 
 @media screen and (min-width: 768px) {

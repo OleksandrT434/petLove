@@ -16,6 +16,17 @@
   font-size: 24px;
   line-height: 1.2;
 }
+.imageContainer {
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  background: #f6b83d;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
 
 .partTitle {
   margin-left: 6px;
@@ -140,6 +151,13 @@
   width: 55%;
 }
 
+.errorMessage {
+  margin: 0;
+  color: #d32f2f;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .actionButtons {
   display: flex;
   justify-content: flex-end;
@@ -165,4 +183,9 @@
 .submitButton {
   background: #f6b83d;
   color: #fff;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }

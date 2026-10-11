@@ -3,18 +3,18 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaUserAlt, FaPen, FaStar, FaTrash } from "react-icons/fa";
-import  Header from "@/components/Header/Header";
+import Header from "@/components/Header/Header";
 import { AuthApi } from "@/lib/api/clientApi"; 
 import type { CurrentUserFull } from "@/types/auth";
 import EditProfileModal from "@/components/EditProfileModal/EditProfileModal";
-
-
+import { useAuth } from "@/components/AuthContext/AuthContext";
 import css from "./page.module.css";
 
 type TabKey = "favorite" | "viewed";
 
 export default function Profile() {
   const router = useRouter();
+  const { user: authUser, logout } = useAuth();
 
   const [user, setUser] = useState<CurrentUserFull | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +29,11 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState<TabKey>("favorite");
 
   useEffect(() => {
+    if (!authUser) {
+      router.push("/");
+      return;
+    }
+
     async function loadUser() {
       try {
         const data = await AuthApi.getCurrentFull();
@@ -45,7 +50,7 @@ export default function Profile() {
     }
 
     loadUser();
-  }, []);
+  }, [authUser, router]);
 
   const handleUserSaved = (updatedUser: CurrentUserFull) => {
     setUser(updatedUser);
@@ -54,24 +59,42 @@ export default function Profile() {
     setPhone(updatedUser.phone);
   };
 
+  const handleRemoveFavorite = async (noticeId: string) => {
+    try {
+      await AuthApi.removeNoticeFromFavorites(noticeId);
+      setUser((currentUser) =>
+        currentUser
+          ? {
+              ...currentUser,
+              noticesFavorites: currentUser.noticesFavorites.filter(
+                (notice) => notice._id !== noticeId
+              ),
+            }
+          : null
+      );
+    } catch (error) {
+      console.error("Error removing favorite:", error);
+    }
+  };
+
   const handleLogout = async () => {
     try {
-      await AuthApi.signOut();
+      await logout();
       router.push("/");
     } catch (error) {
       console.error("Error signing out:", error);
+      router.push("/");
     }
   };
+
   if (isLoading) {
     return <p className={css.emptyState}>Loading profile...</p>;
   }
-  if (loadError || !user) {
-    return (
-      <p className={css.emptyState}>
-        Could not load your profile. Please try again later.
-      </p>
-    );
+
+  if (!authUser || loadError || !user) {
+    return null;
   }
+
   const noticesToShow =
     activeTab === "favorite" ? user.noticesFavorites : user.noticesViewed;
 
@@ -152,7 +175,7 @@ export default function Profile() {
             <button
               type="button"
               className={css.addPetButton}
-
+              onClick={() => router.push("/add-pet")}
             >
               Add pet +
             </button>
@@ -175,14 +198,63 @@ export default function Profile() {
                     className={css.petImage}
                   />
 
-                  <div>
-                    <p className={css.petName}>
-                      {pet.name}
-                    </p>
+                  <div className={css.petBody}>
+                    <div className={css.petTopRow}>
+                      <p className={css.petTitle}>
+                        {pet.title}
+                      </p>
+                    </div>
 
-                    <p className={css.petMeta}>
-                      {pet.species} · {pet.birthday} · {pet.sex}
-                    </p>
+                    <div className={css.petMetaRow}>
+                      <div className={css.petInfoBlock}>
+                        <span>Name</span>
+                        <p>{pet.name}</p>
+                      </div>
+
+                      <div className={css.petInfoBlock}>
+                        <span>Birthday</span>
+                        <p>{pet.birthday}</p>
+                      </div>
+
+                      <div className={css.petInfoBlock}>
+                        <span>Sex</span>
+                        <p>{pet.sex}</p>
+                      </div>
+
+                      <div className={css.petInfoBlock}>
+                        <span>Species</span>
+                        <p>{pet.species}</p>
+                      </div>
+                    </div>
+
+                    <div className={css.petFooterRow}>
+                      <div className={css.petFooterInfo} />
+
+                      <button
+                        type="button"
+                        className={css.petDeleteButton}
+                        onClick={async () => {
+                          try {
+                            await AuthApi.removePet(pet._id);
+                            setUser((currentUser) =>
+                              currentUser
+                                ? {
+                                    ...currentUser,
+                                    pets: currentUser.pets.filter(
+                                      (item) => item._id !== pet._id
+                                    ),
+                                  }
+                                : null
+                            );
+                          } catch (error) {
+                            console.error("Error deleting pet:", error);
+                          }
+                        }}
+                        aria-label="Delete pet"
+                      >
+                        <FaTrash className={css.petDeleteIcon} />
+                      </button>
+                    </div>
                   </div>
                 </li>
               ))}
@@ -251,7 +323,6 @@ export default function Profile() {
                 />
 
                 <div className={css.favoriteBody}>
-
                   <div className={css.favoriteTitleRow}>
                     <p className={css.favoriteTitle}>
                       {notice.title}
@@ -263,30 +334,57 @@ export default function Profile() {
                     </span>
                   </div>
 
+                  <ul className={css.favoriteMeta}>
+                    <li>
+                      <span>Name</span>
+                      <p>{notice.name}</p>
+                    </li>
+                    <li>
+                      <span>Birthday</span>
+                      <p>{notice.birthday}</p>
+                    </li>
+                    <li>
+                      <span>Sex</span>
+                      <p>{notice.sex}</p>
+                    </li>
+                    <li>
+                      <span>Species</span>
+                      <p>{notice.species}</p>
+                    </li>
+                    <li>
+                      <span>Category</span>
+                      <p>{notice.category}</p>
+                    </li>
+                  </ul>
+
                   <p className={css.favoriteDescription}>
                     {notice.comment}
                   </p>
 
                   <div className={css.favoriteFooter}>
-
                     <span className={css.favoritePrice}>
                       {notice.category === "free"
                         ? "Free"
                         : `$${notice.price ?? "—"}`}
                     </span>
-                    <button
-                      type="button"
-                      className={css.learnMoreButton}
-                    >
-                      Learn more
-                    </button>
-                    <button
-                      type="button"
-                      className={css.deleteButton}
-                    >
-                      <FaTrash />
-                    </button>
 
+                    <div className={css.favoriteActions}>
+                      <button
+                        type="button"
+                        className={css.learnMoreButton}
+                      >
+                        Learn more
+                      </button>
+
+                      <button
+                        type="button"
+                        className={css.deleteButton}
+                        onClick={() => handleRemoveFavorite(notice._id)}
+                        aria-label="Remove from favorites"
+                      >
+                        <FaTrash className={css.deleteIcon} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </li>
